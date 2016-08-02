@@ -44,8 +44,9 @@ if (env === 'production') {
  * Routes
  */
 
-// serve index
 app.get('/', routes.index);
+app.get('/about', routes.about);
+app.get('/contact', routes.contact);
 
 // JSON API
 app.get('/api/name', api.name);

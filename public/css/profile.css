@@ -1,0 +1,329 @@
+/*resuable content*/
+
+/*scroll bar*/
+div.scroll1{
+  height: 385px;
+  background-color: whitesmoke;
+  overflow: scroll;
+  width: 45%;
+  max-width: 500px;
+  margin-left:5.3%;
+  padding: 0.2em;
+  font: 100%/1.4 serif;
+  border: 1px solid rgba(0,0,0,0.25);
+  float: left;
+    
+}
+
+div.hidden {
+    background-color: #00FF00;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+}
+
+.panel-info {
+    width: 40%;
+    float:left;
+    margin-left: 5%;
+    display:inline-block;
+}
+
+
+/***************************/
+
+h1,
+h2,
+h3 {
+    font-weight: 300;
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 240%;
+    word-spacing: 4px;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 180%;
+    word-spacing: 2px; 
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+h3 {
+    font-size: 110%;
+    
+}
+
+
+
+/***************************/
+/***********banner*********/
+/***************************/
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 100px;
+}
+
+h1 {
+  display: block;
+  font-size: 50px;
+  margin: 25px auto 0;
+  width: 975px;
+}
+
+h1>small {
+  color: #aaaaaa;
+  font-size: .5em;
+}
+
+header {
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+  margin:   30px auto 80px;
+  height:   410px;
+  position: relative;
+  width:    1000px;
+}
+
+figure.profile-banner {
+  left:     0;
+  overflow: hidden;
+  position: absolute;
+  top:      0;
+  z-index:  1;
+  background-size: cover;
+}
+
+figure.profile-banner img {
+    height: 325px;
+    width: 1000px;
+    overflow: hidden;
+}
+
+
+
+.profile-picture {
+  background-position: center center;
+  background-size: cover;
+  border: 5px #efefef solid;
+  border-radius: 50%;
+  bottom: -50px;
+  box-shadow: inset 1px 1px 3px rgba(0,0,0,0.2), 1px 1px 4px rgba(0,0,0,0.3);
+  height: 148px;
+  left: 150px;
+  position: absolute;
+  width: 148px;
+  z-index: 3;
+}
+
+.profile-picture img {
+    border-radius: 50%;
+    height: 138px;
+    width: 138px;
+    left: 150px;
+    z-index: 5;
+}
+
+div.profile-stats {
+  bottom: 0;
+  border-top: 1px solid rgba(0,0,0,0.5);
+  left: 0;
+  padding: 15px 15px 15px 350px;
+  position: absolute;
+  right: 0;
+  z-index: 2;
+  
+  /* Generated Gradient */
+  background: -moz-linear-gradient(top,  rgba(255,255,255,0.5) 0%, rgba(0,0,0,0.51) 3%, rgba(0,0,0,0.75) 61%, rgba(0,0,0,0.5) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.5)), color-stop(3%,rgba(0,0,0,0.51)), color-stop(61%,rgba(0,0,0,0.75)), color-stop(100%,rgba(0,0,0,0.5)));
+  background: -webkit-linear-gradient(top,  rgba(255,255,255,0.5) 0%,rgba(0,0,0,0.51) 3%,rgba(0,0,0,0.75) 61%,rgba(0,0,0,0.5) 100%);
+ background: -o-linear-gradient(top,  rgba(255,255,255,0.5) 0%,rgba(0,0,0,0.51) 3%,rgba(0,0,0,0.75) 61%,rgba(0,0,0,0.5) 100%);
+  background: -ms-linear-gradient(top,  rgba(255,255,255,0.5) 0%,rgba(0,0,0,0.51) 3%,rgba(0,0,0,0.75) 61%,rgba(0,0,0,0.5) 100%);
+  background: linear-gradient(to bottom,  rgba(255,255,255,0.5) 0%,rgba(0,0,0,0.51) 3%,rgba(0,0,0,0.75) 61%,rgba(0,0,0,0.5) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80ffffff', endColorstr='#80000000',GradientType=0 );
+
+}
+
+div.profile-stats ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+div.profile-stats ul li {
+  color: #efefef;
+  display: block;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 50px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.7)
+}
+
+div.profile-stats li span {
+  display: block;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+div.profile-stats a.follow {
+  display: block;
+  float: right;color: #ffffff;
+  margin-top: 5px;
+  text-decoration: none;
+  
+  /* This is a copy and paste from Bootstrap */
+  background-color: #49afcd;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #49afcd;
+  background-image: -moz-linear-gradient(top, #5bc0de, #2f96b4);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#5bc0de), to(#2f96b4));
+  background-image: -webkit-linear-gradient(top, #5bc0de, #2f96b4);
+  background-image: -o-linear-gradient(top, #5bc0de, #2f96b4);
+  background-image: linear-gradient(to bottom, #5bc0de, #2f96b4);
+  background-repeat: repeat-x;
+  border-color: #2f96b4 #2f96b4 #1f6377;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+
+  display: inline-block;
+  padding: 4px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 20px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}
+
+div.profile-stats a.follow.followed {
+    /*From bootstrap*/
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #5bb75b;
+  background-image: -moz-linear-gradient(top, #62c462, #51a351);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#62c462), to(#51a351));
+  background-image: -webkit-linear-gradient(top, #62c462, #51a351);
+  background-image: -o-linear-gradient(top, #62c462, #51a351);
+  background-image: linear-gradient(to bottom, #62c462, #51a351);
+  background-repeat: repeat-x;
+  border-color: #51a351 #51a351 #387038;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  
+}
+
+header>h1 {
+  bottom: -50px;
+  color: #354B63;
+  font-size: 40px;
+  left: 350px;
+  position: absolute;
+  z-index: 5;
+}
+
+
+
+/*task section*/
+.task {
+    padding-top: 3px;
+}
+
+.total {
+    background-image: url(../images/420838.jpg);
+    padding-bottom: 50px;
+}
+/*接受任务按钮*/
+
+/*note that on the button should change accordingly to the status of the task */
+
+.task-bottom-section {
+    width: 100%;
+    padding-left:20%;
+}
+
+.linka {
+    margin-left: 0%;
+    margin-bottom: 10px;
+}
+
+.task-accept-message {
+    font-size:80%;
+    color: green;
+    margin-left: 5%;
+    margin-top:10px;
+}
+
+.btn:link,
+.btn:visited {
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: 300;
+    border-radius: 200px;
+    text-decoration-color: white;
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
+}
+
+.btn-full:link,
+.btn-full:visited {
+    background-color: #956295;
+    border: 1px solid #956295;
+    color: #fff;
+    margin-right: 15px;
+}
+
+.btn-full:hover,
+.btn-full:active{
+  background: #f4d638;
+  transition: 0.5s all;
+  -webkit-transition: 0.5s all;
+  -moz-transition: 0.5s all;
+  -o-transition: 0.5s all;
+}
+
+.btn-full2:hover,
+.btn-full2:active{
+    border-color: deepskyblue;
+    border: 1px solid;
+    z-index: 10;
+}
+
+.task-title {
+    margin-left: 42%;
+    margin-top: 30px;
+    margin-bottom:30px;
+}
+
+/***************************/
+/***********animations*******/
+/***************************/
+
+.js--tasks {
+    opacity: 0;
+}
+
+.js--tasks.animated {
+    /*when animated class is present at the same time*/
+    /*waypoint script will add this class when scroll to that*/
+    opacity: 1;
+
+}
+
+.js--wp1 {
+    opacity: 0;
+}
+
+.js--wp1.animated {
+    opacity: 1;
+}
+
+.js--title {
+    opacity: 0;
+}
+
+.js--title.animated {
+    opacity: 1;
+}
+
+

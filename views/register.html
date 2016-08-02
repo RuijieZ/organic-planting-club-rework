@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <link type="text/css" rel=stylesheet href="css/Grid.css">
+    <link type="text/css" rel=stylesheet href="css/profile.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.css">
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <!-- Custom Theme files -->
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
+    <!-- Custom Theme files -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }>
+    </script>
+    <meta name="keywords" content="Organic Planting Club, Waterloo Organic Planting, Organic Planting" />
+    <!--Google Fonts-->
+    <script src="js/menu_jquery.js"></script>
+</head>
+
+<div class="container">
+    <form class="col-sm-offset-3 col-sm-5 form-horizontal" role="form" method="post">
+        <fieldset>
+            <legend>用户注册</legend>
+			<p>
+				<font color=red size=+1><%= message %></font>
+			</p>
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="username">用户名</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="username" name="username" placeholder="User Name" required>
+                    <p class="regTip">用户名长6-10位，由字母，数字和下划线组成</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="password">密码</label>
+                <div class="col-sm-9">
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+                    <p class="regTip">密码长6位以上，由任意字符组成</p>
+                </div>
+            </div>
+			<div class="form-group">
+                <label class="col-sm-3 control-label" for="password">确认密码</label>
+                <div class="col-sm-9">
+                    <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Password" required>
+                    <p class="regTip">确认密码必须与密码相同</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-3 col-sm-9">
+                    <button type="submit" class="btn btn-primary">立即注册</button>
+                </div>
+				<div class="col-sm-offset-3 col-sm-9">
+					<p></p>
+					<a href="/login">已经有账号了？点这里登录！</a>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+
+<div class="footer">
+    <div class="container">
+        <div class="footer-main">
+              <div class="col-md-4 ftr-grd">
+                 <h3>地址</h3>
+                 <p>54 McDougall Rd</p>
+                 <p>Waterloo, Ontario, Canada</p>
+                 <p>N2L 2W5</P>
+              </div>
+              <div class="col-md-4 ftr-grd">
+                 <h3>联系我们</h3>
+                 <ul>
+                 <p>Phone: +1 226 339 1589</p>
+                 </ul>
+              </div>
+              <div class="col-md-4 ftr-grd">
+                 <h3>成为成员</h3>
+                 <p>请点击下面的按钮，会带您进入注册页面 </p>
+                <!--label class="hvr-wobble-bottom"> <input type="submit" value="注册"></label-->
+                <label class="hvr-wobble-bottom"> <input type="submit" onclick="location.href='/register'" value="注册"></label>
+              </div>
+            <div class="clearfix"> </div>
+            <div class="copy-right">
+            <p>Copyright &copy; 2015.YQY Service, All rights reserved.</p>
+           </div>
+        </div>
+    </div>
+</div>
+<!--//footer--> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+        <script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="//cdn.jsdelivr.net/selectivizr/1.0.3b/selectivizr.min.js"></script>
+<script type="text/javascript" src="js/jquery.waypoints.min.js"></script>
+<script type="text/javascript" src="js/animation.js"></script>
+</body>
+</html>
