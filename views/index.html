@@ -1,187 +1,95 @@
 <!DOCTYPE HTML>
-<html>
-<head>
-	<link type="text/css" rel=stylesheet href="css/Grid.css">
-	<link type="text/css" rel=stylesheet href="css/profile.css">
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.css">
-	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script src="js/jquery-1.11.0.min.js"></script>
-	<!-- Custom Theme files -->
-	<link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
-	<!-- Custom Theme files -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="keywords" content="Organic Planting Club, Waterloo Organic Planting, Organic Planting" />
-	<!--Google Fonts-->
-	<script src="js/menu_jquery.js"></script>
-</head>
-<body>
-<!--header start here-->
-<div class="header">
-	<div class="container">
-		<div class="header-main">
-			   <div class="head-left">
-				   	<div class="phone">
-				   		<p>电话<span class="ph-numb">1 226 339 1589</span></p>
-				   	</div>
-				     <!--div id="small-dialog" class="mfp-hide">
-					<div class="search-top">
-							<div class="login">
-								<input type="submit" value="">
-								<input type="text" value="Search Here..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">		
-							</div>
-						</div>				
-					</div-->
-	        <!---->
-	              <div class="clearfix"> </div>
-                </div>
-			   <div class="header-right">
-				   <div class="logo">
-				   	   <h1><a href='/index'>Organic Planting Club</a></h1>
-				   </div>
-				   <div class="header-login">
-					 <div class="col-md-4 ftr-grd">
-					  <label class="col-md-4 ftr-grd"> <input type="submit" onclick="location.href='/login'" value="登录"></label>
-				   </div>
-		      </div>
-		    <div class="clearfix"> </div>
-	     </div>
-	     <div class="clearfix"> </div>
-     </div>
-   </div>
-</div>
+<html ng-app="myApp">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Organic Planting Club, Waterloo Organic Planting, Organic Planting" />
+		<link type="text/css" rel=stylesheet href="css/Grid.css">
+		<link type="text/css" rel=stylesheet href="css/profile.css">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.css">
+		<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+		<link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="js/jquery-1.11.0.min.js"></script>
+		<!-- angular js-->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+		<script src="js/app.js"></script>
+		<script src="js/controllers.js"></script>
+		<script src='js/services.js'></script>
+		<script src='js/filters.js'></script>
+  		<script src='js/directives.js'></script>
+	</head>
+	<body ng-controller='AppCtrl'>
+		<!--header start here-->
+		<div class="header">
+			<div class="container">
+				<div class="header-main">
+					    <div class="head-left">
+						   	<div class="phone">
+						   		<p>电话<span class="ph-numb">1 226 339 1589</span></p>
+						   	</div>
+			                <div class="clearfix"> </div>
+		                </div>
+					    <div class="header-right">
+						    <div class="logo">
+						   	   <h1><a href='/index'>Organic Planting Club</a></h1>
+						    </div>
+						    <div class="header-login">
+								 <div class="col-md-4 ftr-grd">
+								  	<label class="col-md-4 ftr-grd"> <input type="submit" onclick="location.href='/login'" value="登录"></label>
+							   	</div>
+				        	</div>
+				        	<div class="clearfix"> </div>
+				     	</div>
+				     	<div class="clearfix"> </div>
+		        </div>
+		   </div>
+		</div>
 
-<div class="top-navg-main">
-	<div class="container">
-	    <div class="top-navg">
-	    	           <span class="menu"> <img src="images/icon.png" alt=""/></span>
-				<ul class="res">
-				    <li><a href="index" class="active hvr-sweep-to-bottom">主页</a></li> 
-					<li><a class="hvr-sweep-to-bottom" href="about">关于</a></li>  
-					<li><a class="hvr-sweep-to-bottom" href="contact">联系</a></li> 
-				 </ul>
-					<!-- script-for-menu -->
-						 <script>
-						   $( "span.menu" ).click(function() {
-							 $( "ul.res" ).slideToggle( 300, function() {
-							 // Animation complete.
-							  });
-							 });
-						</script>
-		        <!-- /script-for-menu -->
-		   </div>
-	 </div>
-</div>
-<div class="banner">
-	<div class="container">
-		<div class="banner-main">
-		          <h3>我们种植自己的食物</h3>
-		          <p>成员们互助合作，为了吃上健康，自然，有营养的有机食品而努力</p>
-		          <a href="about">了解更多</a>
-		     <div class="clearfix"> </div>	
-		</div>
-	</div>
-</div>
-<!--banner end here-->
-
-<!--wedo start here-->
-<div class="we-do">
-	<div class="container">
-		<div class="wedo-main">
-			<div class="col-md-4 wedo-grid">
-				<span class="glyphicon glyphicon-leaf" aria-hidden="true"> </span>
-				<h3>合理的任务规划 </h3>
-				<h4>管理员会安排合适的任务</h4>
-				<p> 一块地分成了十等份。每一份地会定期产生工作量合适的任务，交由成员完成 </p>
+		<div class="top-navg-main">
+			<div class="container">
+			    <div class="top-navg">
+		    	    <span class="menu"> <img src="images/icon.png" alt=""/></span>
+					<ul class="res">
+					    <li><a class="active hvr-sweep-to-bottom" href="home">主页</a></li> 
+						<li><a class="hvr-sweep-to-bottom" href="about">关于</a></li>  
+						<li><a class="hvr-sweep-to-bottom" href="contact">联系</a></li> 
+					</ul>
+				</div>
 			</div>
-			<div class="col-md-4 wedo-grid">
-				<span class="glyphicon glyphicon-user" aria-hidden="true"> </span>
-				<h3>自由的时间安排</h3>
-				<h4>成员们根据需要自由的接受任务</h4>
-				<p> 每完成一份任务，成员会获得一定的积分。这些积分可以用来领取丰收的果实 </p>
+		</div>
+		<div class="ng-view-containner">
+			<div ng-view></div>
+		</div>
+		
+		<div class="footer">
+			<div class="container">
+				<div class="footer-main">
+					  <div class="col-md-4 ftr-grd">
+					  	 <h3>地址</h3>
+					  	 <p>54 McDougall Rd</p>
+					  	 <p>Waterloo, Ontario, Canada</p>
+					  	 <p>N2L 2W5</P>
+					  </div>
+					  <div class="col-md-4 ftr-grd">
+					  	 <h3>联系我们</h3>
+					  	 <ul>
+					  	 <p>Phone: +1 226 339 1589</p>
+					  	 </ul>
+					  </div>
+					  <div class="col-md-4 ftr-grd">
+					  	 <h3>成为成员</h3>
+					  	 <p>请点击下面的按钮，会带您进入注册页面 </p>
+					  	<!--label class="hvr-wobble-bottom"> <input type="submit" value="注册"></label-->
+						<label class="hvr-wobble-bottom"> <input type="submit" onclick="location.href='/register'" value="注册"></label>
+					  </div>
+					<div class="clearfix"> </div>
+					<div class="copy-right">
+					<p>Copyright &copy; 2016.YQY Service, All rights reserved.</p>
+				   </div>
+				</div>
 			</div>
-			<div class="col-md-4 wedo-grid">
-				<span class="glyphicon glyphicon-eye-open" aria-hidden="true"> </span>
-				<h3>融洽的工作氛围</h3>
-				<h4>自食其力，其乐融融</h4>
-				<p> 成员们互助合作，像家庭一样共同分享劳动的快乐与丰收的喜悦 </p>
-			</div>
-		  <div class="clearfix"> </div>	
-	   </div>
-   </div>
-</div>
-<!--we do end here-->
-<!--agrom strip start here-->
-<div class="agro-strip">
-	<div class="container">
-		<div class="agro-strip-main">
-			<h3>我们运用时间银行的管理法则</h3>
-			<p>我们看重每个人的劳动与付出。成员付出的时间会记载在数据库里，成员可以为此获得自己的劳动果实</p>
-			<a href="about" class="hvr-wobble-bottom">了解更多</a>
-			<div class="clearfix"> </div>
 		</div>
-	</div>
-</div>
-<!--agrom strip end here-->
-<!--latest-news start here-->
-<div class="latest-new">
-	<div class="container">
-		<div class="latest-news-main">
-		   <div class="col-md-3 latest-grid">
-		   	  <img src="images/1808774085.jpg" alt="" class="img-responsive">
-		   	  <p>创始人在阳光下劳动</p>
-		   </div>
-		   <div class="col-md-3 latest-grid">
-		   	  <img src="images/1851566752.jpg" alt="" class="img-responsive">
-		   	  <p>清晨的有机农场</p>
-		   </div>
-		   <div class="col-md-3 latest-grid">
-		   	  <img src="images/1913272738.jpg" alt="" class="img-responsive">
-		   	  <p>大丰收带来的喜悦</p>
-		   </div>
-		   <div class="col-md-3 latest-grid">
-		   	  <img src="images/1856465393.jpg" alt="" class="img-responsive">
-		   	  <p>刚刚收获的土豆</p>
-		   </div>
-			<div class="clearfix"> </div>
-		</div>
-	</div>
-</div>
-<div class="footer">
-	<div class="container">
-		<div class="footer-main">
-			  <div class="col-md-4 ftr-grd">
-			  	 <h3>地址</h3>
-			  	 <p>54 McDougall Rd</p>
-			  	 <p>Waterloo, Ontario, Canada</p>
-			  	 <p>N2L 2W5</P>
-			  </div>
-			  <div class="col-md-4 ftr-grd">
-			  	 <h3>联系我们</h3>
-			  	 <ul>
-			  	 <p>Phone: +1 226 339 1589</p>
-			  	 </ul>
-			  </div>
-			  <div class="col-md-4 ftr-grd">
-			  	 <h3>成为成员</h3>
-			  	 <p>请点击下面的按钮，会带您进入注册页面 </p>
-			  	<!--label class="hvr-wobble-bottom"> <input type="submit" value="注册"></label-->
-				<label class="hvr-wobble-bottom"> <input type="submit" onclick="location.href='/register'" value="注册"></label>
-			  </div>
-			<div class="clearfix"> </div>
-			<div class="copy-right">
-			<p>Copyright &copy; 2015.YQY Service, All rights reserved.</p>
-		   </div>
-		</div>
-	</div>
-</div>
-<!--//footer--> 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
-        <script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="//cdn.jsdelivr.net/selectivizr/1.0.3b/selectivizr.min.js"></script>
-<script type="text/javascript" src="js/jquery.waypoints.min.js"></script>
-<script type="text/javascript" src="js/animation.js"></script>
-</body>
+		<!--//footer--> 
+	</body>
 </html>

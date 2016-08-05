@@ -1,35 +1,114 @@
-<% include header.html %>
+<!DOCTYPE HTML>
+<html>
+    <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <meta name="keywords" content="Organic Planting Club, Waterloo Organic Planting, Organic Planting" />
+            <link type="text/css" rel=stylesheet href="css/profile.css">
+            <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.css">
+            <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+            <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+            <script src="js/jquery-1.11.0.min.js"></script>
+            <!-- Custom Theme files -->
+            <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
+            <!-- Custom Theme files -->
+    </head>
+    <body>
+        <!--header start here-->
+        <div class="header">
+            <div class="container">
+                <div class="header-main">
+                        <div class="head-left">
+                            <div class="phone">
+                                <p>电话<span class="ph-numb">1 226 339 1589</span></p>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+                        <div class="header-right">
+                            <div class="logo">
+                               <h1><a href='/index'>Organic Planting Club</a></h1>
+                            </div>
+                            <div class="header-login">
+                                 <div class="col-md-4 ftr-grd">
+                                    <label class="col-md-4 ftr-grd"> <input type="submit" onclick="location.href='/login'" value="登录"></label>
+                                </div>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+                        <div class="clearfix"> </div>
+                </div>
+           </div>
+        </div>
 
-<div class="container">
-    <form class="col-sm-offset-3 col-sm-5 form-horizontal" role="form" method="post">
-        <fieldset>
-            <legend>用户登录</legend>
-			<p>
-				<font color=red size=+1><%= message %></font>
-			</p>
-            <div class="form-group">
-                <label class="col-sm-3 control-label" for="username">用户名</label>
-                <div class="col-sm-9">
-                    <input type="text" class="form-control" id="username" name="username" placeholder="User Name" required>
+        <div class="top-navg-main">
+            <div class="container">
+                <div class="top-navg">
+                    <span class="menu"> <img src="images/icon.png" alt=""/></span>
+                    <ul class="res">
+                        <li><a href="index" class="active hvr-sweep-to-bottom">主页</a></li> 
+                        <li><a class="hvr-sweep-to-bottom" href="about">关于</a></li>  
+                        <li><a class="hvr-sweep-to-bottom" href="contact">联系</a></li> 
+                    </ul>
                 </div>
             </div>
-            <div class="form-group">
-                <label class="col-sm-3 control-label" for="password">密码</label>
-                <div class="col-sm-9">
-                    <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+        </div>
+        <div class="container">
+            <form class="col-sm-offset-3 col-sm-5 form-horizontal" role="form" method="post">
+                <fieldset>
+                    <legend>用户登录</legend>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="username">用户名</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="username" name="username" placeholder="User Name" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="password">密码</label>
+                        <div class="col-sm-9">
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-3 col-sm-9">
+                            <button type="submit" class="btn btn-primary">登录</button>
+                        </div>
+        				<div class="col-sm-offset-3 col-sm-9">
+        					<p></p>
+        					<a href='/register'>没有账号？花5分钟就能注册！</a>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div class="footer">
+            <div class="container">
+                <div class="footer-main">
+                      <div class="col-md-4 ftr-grd">
+                         <h3>地址</h3>
+                         <p>54 McDougall Rd</p>
+                         <p>Waterloo, Ontario, Canada</p>
+                         <p>N2L 2W5</P>
+                      </div>
+                      <div class="col-md-4 ftr-grd">
+                         <h3>联系我们</h3>
+                         <ul>
+                         <p>Phone: +1 226 339 1589</p>
+                         </ul>
+                      </div>
+                      <div class="col-md-4 ftr-grd">
+                         <h3>成为成员</h3>
+                         <p>请点击下面的按钮，会带您进入注册页面 </p>
+                        <!--label class="hvr-wobble-bottom"> <input type="submit" value="注册"></label-->
+                        <label class="hvr-wobble-bottom"> <input type="submit" onclick="location.href='/register'" value="注册"></label>
+                      </div>
+                    <div class="clearfix"> </div>
+                    <div class="copy-right">
+                    <p>Copyright &copy; 2016.YQY Service, All rights reserved.</p>
+                   </div>
                 </div>
             </div>
-            <div class="form-group">
-                <div class="col-sm-offset-3 col-sm-9">
-                    <button type="submit" class="btn btn-primary">登录</button>
-                </div>
-				<div class="col-sm-offset-3 col-sm-9">
-					<p></p>
-					<a href='/register'>没有账号？花5分钟就能注册！</a>
-                </div>
-            </div>
-        </fieldset>
-    </form>
-</div>
+        </div>
+        <!--//footer--> 
+    </body>
+</html>
 
-<% include footer.html %>

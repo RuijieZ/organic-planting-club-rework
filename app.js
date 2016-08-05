@@ -45,8 +45,9 @@ if (env === 'production') {
  */
 
 app.get('/', routes.index);
-app.get('/about', routes.about);
+app.get('/home', routes.home);
 app.get('/contact', routes.contact);
+app.get('/about', routes.about);
 
 // JSON API
 app.get('/api/name', api.name);
