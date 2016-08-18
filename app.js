@@ -8,8 +8,8 @@ var express = require('express'),
   methodOverride = require('method-override'),
   errorHandler = require('express-error-handler'),
   morgan = require('morgan'),
-  routes = require('./routes'),
-  api = require('./routes/api'),
+  router = require('./router'),
+  api = require('./router/api'),
   http = require('http'),
   ejs = require('ejs'),
   path = require('path');
@@ -44,18 +44,18 @@ if (env === 'production') {
  * Routes
  */
 
-app.get('/', routes.index);
-app.get('/index', routes.index);
-app.get('/contact', routes.contact);
-app.get('/about', routes.about);
-app.get('/login', routes.login);
-
+app.use('/', router);
+app.use('/index', router);
+app.use('/contact', router);
+app.use('/about', router);
+app.use('/login', router);
+app.use('/register', router);
 
 // JSON API
 app.get('/api/name', api.name);
 
 // redirect all others to the index (HTML5 history)
-app.get('*', routes.index);
+app.get('*', router);
 
 
 /**
