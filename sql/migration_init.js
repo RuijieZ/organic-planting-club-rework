@@ -29,7 +29,7 @@ connection.connect(function(err) {
 	}
 });
 
-var runUpgradeQuery = function() {
+function runUpgradeQuery() {
 	glob.sync('**/query/*.js').forEach(function(file) {
 		var queryFileImport = require(path.resolve(file));
 		connection.query(queryFileImport.upgradeSql, function(err, rows, field) {
@@ -42,7 +42,7 @@ var runUpgradeQuery = function() {
 	});
 };
 
-var setupDB = function() {
+function setupDB() {
 	var setup = `
 		DROP DATABASE IF EXISTS organic_planting_club;
 		CREATE DATABASE organic_planting_club;
@@ -58,6 +58,6 @@ var setupDB = function() {
 	});
 }
 
-var runDowngradeQuery = function() {
+function runDowngradeQuery() {
 	// to be implemented
 }

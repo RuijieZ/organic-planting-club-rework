@@ -4,6 +4,7 @@ CREATE TABLE user (
 	id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
 	email VARCHAR(80),
 	password VARCHAR(80),
+	username VARCHAR(80),
 	PRIMARY KEY (id),
 	UNIQUE (email)
 );

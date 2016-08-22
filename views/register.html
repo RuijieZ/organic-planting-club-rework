@@ -56,11 +56,19 @@
               <form class="col-sm-offset-3 col-sm-5 form-horizontal" role="form" method="post">
                   <fieldset>
                       <legend>用户注册</legend>
+                      <p style="color: red"><%= message %></p>
                       <div class="form-group">
-                          <label class="col-sm-3 control-label" for="username">电子邮箱</label>
+                          <label class="col-sm-3 control-label" for="useremail">电子邮箱</label>
                           <div class="col-sm-9">
-                              <input type="email" class="form-control" id="username" name="userEmail" placeholder="User Name" required>
-                              <p class="regTip">用户名长6-10位，由字母，数字和下划线组成</p>
+                              <input type="email" class="form-control" id="useremail" name="userEmail" placeholder="john@example.com" required>
+                              <p class="regTip">您的常用邮箱</p>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-sm-3 control-label" for="username">用户名</label>
+                          <div class="col-sm-9">
+                              <input type="text" class="form-control" id="username" name="username" placeholder="john smith" required>
+                              <p class="regTip">用户名长6-20位，由字母，数字和下划线组成</p>
                           </div>
                       </div>
                       <div class="form-group">
@@ -68,13 +76,6 @@
                           <div class="col-sm-9">
                               <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
                               <p class="regTip">密码长6位以上，由任意字符组成</p>
-                          </div>
-                      </div>
-          			       <div class="form-group">
-                          <label class="col-sm-3 control-label" for="password">确认密码</label>
-                          <div class="col-sm-9">
-                              <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Password" required>
-                              <p class="regTip">确认密码必须与密码相同</p>
                           </div>
                       </div>
                       <div class="form-group">
@@ -108,7 +109,6 @@
                         <div class="col-md-4 ftr-grd">
                            <h3>成为成员</h3>
                            <p>请点击下面的按钮，会带您进入注册页面 </p>
-                          <!--label class="hvr-wobble-bottom"> <input type="submit" value="注册"></label-->
                           <label class="hvr-wobble-bottom"> <input type="submit" onclick="location.href='/register'" value="注册"></label>
                         </div>
                       <div class="clearfix"> </div>
