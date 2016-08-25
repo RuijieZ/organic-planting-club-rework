@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var register = require('../utils/register');
-var login = require('../utils/login');
+var auth = require('../utils/authentication');
 
 var successMessage = ['您刚刚获得了一个账号！现在请登录'];
 
@@ -28,11 +28,11 @@ router.route('/login')
 	.post(function(req, res) {
 		userEmail = req.body.userEmail;
 		password = req.body.password;
-		login.signIn(userEmail, password, function(errorMessage) {
+		auth.authenticate(userEmail, password, function(errorMessage, token) {
 			if (errorMessage) {
 				res.render('login', {message: errorMessage});
 			} else {
-				res.render('about');
+				res.render('app');
 			}
 		});
 	});
