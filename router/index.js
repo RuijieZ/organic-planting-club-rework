@@ -7,15 +7,15 @@ var successMessage = ['您刚刚获得了一个账号！现在请登录'];
 
 router.get('/', function(req, res) {
 	res.render('index');
-}); 
+});
 
 router.get('/index', function(req, res) {
 	res.render('index');
-}); 
+});
 
 router.get('/about', function(req, res) {
 	res.render('about');
-}); 
+});
 
 router.get('/contact', function(req, res) {
 	res.render('contact');
@@ -51,7 +51,7 @@ router.route('/register')
 			} else {
 				res.render('login', {message: successMessage[0]});
 			}
-		});	
+		});
 	});
 
 module.exports = router;

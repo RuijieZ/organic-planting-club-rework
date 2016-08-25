@@ -16,7 +16,7 @@ function authenticate(email, password, next) {
 		} else {
 			console.log('authentication fails');
 			next(errMessage, null);
-		} 
+		}
 	});
 };
 

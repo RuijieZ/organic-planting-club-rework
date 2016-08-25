@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "body-parser": "^1.0.2",
+    "cookie-parser": "^1.4.3",
     "ejs": "^2.5.1",
     "error-handler": "^0.1.4",
     "express": "~4.1.1",
