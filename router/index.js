@@ -1,38 +1,55 @@
 var express = require('express');
 var router = express.Router();
 var register = require('../utils/register');
-var login = require('../utils/login');
-
-var successMessage = ['您刚刚获得了一个账号！现在请登录'];
+var auth = require('../utils/authentication');
+var resetPassword = require('../utils/resetPassword');
+var successMessage = require('../utils/message').successMessage;
+var errorMsg = require('../utils/message').errorMessage;
 
 router.get('/', function(req, res) {
 	res.render('index');
-}); 
+});
 
 router.get('/index', function(req, res) {
 	res.render('index');
-}); 
+});
 
 router.get('/about', function(req, res) {
 	res.render('about');
-}); 
+});
 
 router.get('/contact', function(req, res) {
 	res.render('contact');
 });
 
-router.route('/login')
+router.route('/resetPassword')
 	.get(function(req, res) {
-		res.render('login', {message: ''});
+		res.render('resetPassword');
+	})
+	.post(function(req, res) {
+		// resetPassword.resetPassword()
+	});
+
+router.route('/login')
+	.get(auth.validate, function(req, res) {
+		if (req.validation) {
+			res.redirect('app');
+		} else {
+			res.render('login', {message: errorMsg.resignIn});
+		}
 	})
 	.post(function(req, res) {
 		userEmail = req.body.userEmail;
 		password = req.body.password;
-		login.signIn(userEmail, password, function(errorMessage) {
+		auth.authenticate(userEmail, password, function(errorMessage, token) {
 			if (errorMessage) {
 				res.render('login', {message: errorMessage});
 			} else {
-				res.render('about');
+				res.cookie("OPC_token", {
+					"token": token,
+					"status": 202
+				});
+				res.redirect('app');
 			}
 		});
 	});
@@ -49,9 +66,13 @@ router.route('/register')
 			if (errorMessage) {
 				res.render('register', {message: errorMessage});
 			} else {
-				res.render('login', {message: successMessage[0]});
+				res.render('login', {message: successMessage.registerSuccess});
 			}
-		});	
+		});
 	});
+
+router.get('/app', function(req, res) {
+	res.render('app');
+})
 
 module.exports = router;

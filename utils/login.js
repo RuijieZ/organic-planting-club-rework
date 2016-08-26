@@ -1,8 +1,8 @@
 /* All login related code
- * Including: sign in, logout
+ * Including: sign in, and reset password
  */
 var connection = require('./database');
-var errorMessage = ['此用户不存在', '密码不正确，请重新输入', '系统出现了一些故障，请联系管理员'];
+var errorMessage = require('./message').errorMessage;
 
 function userEmailExsit(email, next) {
 	connection.query('SELECT * FROM user WHERE email = ?', [email], function(err, rows, fields) {
@@ -10,11 +10,11 @@ function userEmailExsit(email, next) {
 			if (rows.length == 1) {
 				next(null);
 			} else { // user does not exist
-				next(errorMessage[0]);
+				next(errorMessage.userDoesNotExist);
 			}
 		} else {
 			console.log(err);
-			next(errorMessage[2]);
+			next(errorMessage.systemError);
 		}
 	});
 };
@@ -25,11 +25,11 @@ function passwordMatch(email, password, next) {
 			if (rows[0].password == password) {
 				next(null);
 			} else {
-				next(errorMessage[1]);
+				next(errorMessage.userDoesNotExist);
 			}
 		} else {
 			console.log(err);
-			next(errorMessage[2]);
+			next(errorMessage.systemError);
 		}
 	});
 };
@@ -51,5 +51,6 @@ function signIn(email, password, next) {
 };
 
 module.exports = {
-	'signIn': signIn
+	'signIn': signIn,
+	'passwordMatch': passwordMatch,
 };
