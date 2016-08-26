@@ -32,7 +32,11 @@ router.route('/login')
 			if (errorMessage) {
 				res.render('login', {message: errorMessage});
 			} else {
-				res.render('app');
+				res.cookie("OPC_token", {
+					"token": token,
+					"status": 202
+				});
+				res.redirect('app');
 			}
 		});
 	});
@@ -53,5 +57,9 @@ router.route('/register')
 			}
 		});	
 	});
+
+router.get('/app', function(req, res) {
+	res.render('app');
+})
 
 module.exports = router;
