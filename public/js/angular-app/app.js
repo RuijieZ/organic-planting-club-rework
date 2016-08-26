@@ -2,11 +2,11 @@
 
 // Declare app level module which depends on filters, and services
 
-angular.module('myApp', [
-  'myApp.controllers',
-  'myApp.filters',
-  'myApp.services',
-  'myApp.directives'
+angular.module('OPC', [ // OPC , short for organic planting club
+  'OPC.controllers',
+  'OPC.filters',
+  'OPC.services',
+  'OPC.directives'
 ]).
 config(function ($routeProvider, $locationProvider) {
   $routeProvider.

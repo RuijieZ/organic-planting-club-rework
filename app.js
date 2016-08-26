@@ -5,6 +5,7 @@
 
 var express = require('express'),
   bodyParser = require('body-parser'),
+  cookieParser = require('cookie-parser'),
   methodOverride = require('method-override'),
   errorHandler = require('express-error-handler'),
   morgan = require('morgan'),
@@ -25,6 +26,7 @@ app.engine('html', ejs.renderFile);
 app.set('view engine', 'html');
 app.use(morgan('dev'));
 app.use(bodyParser());
+app.use(cookieParser());
 app.use(methodOverride());
 app.use(express.static(path.join(__dirname, 'public')));
 var env = process.env.NODE_ENV || 'development';

@@ -2,20 +2,19 @@ var express = require('express');
 var router = express.Router();
 var register = require('../utils/register');
 var auth = require('../utils/authentication');
-
-var successMessage = ['您刚刚获得了一个账号！现在请登录'];
+var successMessage = require('../utils/message').successMessage;
 
 router.get('/', function(req, res) {
 	res.render('index');
-}); 
+});
 
 router.get('/index', function(req, res) {
 	res.render('index');
-}); 
+});
 
 router.get('/about', function(req, res) {
 	res.render('about');
-}); 
+});
 
 router.get('/contact', function(req, res) {
 	res.render('contact');
@@ -53,9 +52,9 @@ router.route('/register')
 			if (errorMessage) {
 				res.render('register', {message: errorMessage});
 			} else {
-				res.render('login', {message: successMessage[0]});
+				res.render('login', {message: successMessage.registerSuccess});
 			}
-		});	
+		});
 	});
 
 router.get('/app', function(req, res) {
