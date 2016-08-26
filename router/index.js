@@ -2,7 +2,9 @@ var express = require('express');
 var router = express.Router();
 var register = require('../utils/register');
 var auth = require('../utils/authentication');
+var resetPassword = require('../utils/resetPassword');
 var successMessage = require('../utils/message').successMessage;
+var errorMsg = require('../utils/message').errorMessage;
 
 router.get('/', function(req, res) {
 	res.render('index');
@@ -20,9 +22,21 @@ router.get('/contact', function(req, res) {
 	res.render('contact');
 });
 
-router.route('/login')
+router.route('/resetPassword')
 	.get(function(req, res) {
-		res.render('login', {message: ''});
+		res.render('resetPassword');
+	})
+	.post(function(req, res) {
+		// resetPassword.resetPassword()
+	});
+
+router.route('/login')
+	.get(auth.validate, function(req, res) {
+		if (req.validation) {
+			res.redirect('app');
+		} else {
+			res.render('login', {message: errorMsg.resignIn});
+		}
 	})
 	.post(function(req, res) {
 		userEmail = req.body.userEmail;

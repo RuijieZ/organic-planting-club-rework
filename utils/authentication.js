@@ -20,6 +20,27 @@ function authenticate(email, password, next) {
 	});
 };
 
+// validate is a middle ware that first exam the cookies sent
+function validate(req, res, next) {
+	console.log(req.cookies);
+	if (!req.cookies.OPC_token) {
+		req.validation = false;
+		next();
+	}
+	try {
+		var session = jwt.decode(req.cookies.OPC_token.token, privateKey);
+		req.validation = true;
+		console.log(session);
+		next();
+	} catch(err) {
+		req.validation = false;
+		console.log(err);
+		next(err);
+	}
+	return;
+};
+
 module.exports = {
 	'authenticate': authenticate,
+	'validate': validate
 };
