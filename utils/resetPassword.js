@@ -8,9 +8,33 @@ function confirmPasswordMatch(newPassword, confirmPassword) {
 };
 
 function resetPassword(useremail, oldPassword, newPassword, confirmPassword, next) {
-	if (!register.checkUserPassword(newPassword)) {
-		return next('error message');
-	} else {
-
+	// check if the oldPassword matches the one on the database
+	login.passwordMatch(useremail, oldPassword, function(errorMessage) {
+		if (errorMessage) {
+			next(errorMessage);
+			console.log(errorMessage);
+		} else {
+			if (!register.checkUserPassword(newPassword)) { //  new password format check
+				next(errorMessage.invalidePassword);
+			} else {
+				if (!confirmPasswordMatch(newPassword, confirmPassword)) { // new password confirm match
+					next(errorMessage.confirmPasswordMissmatch);
+				} else {
+					connection.query('UPDATE TABLE user SET password = ? WHERE email = ? ', [newPassword, useremail], function(err, rows, fields) {
+						if (err) {
+							console.log(err);
+							next(errorMessage.systemError);
+						} else {
+							// password reset successful!
+							next(null);
+						}
+					});
+				}
+			}
+		}
 	});
+};
+
+module.exports = {
+	'resetPassword': resetPassword,
 }
