@@ -2,11 +2,8 @@
  * Including: sign in, logout, register, reset password
  */
 var connection = require('./database');
-var errorMessage = ['电子邮箱格式不正确，请重新输入',
-					'用户名长度必须在6到20之间，并且只能由数字，字母和下划线组成',
-					'密码长度必须在6到10之间',
-					'该邮箱已被注册，请尝试另一个邮箱地址',
-					'系统出了一点故障，请重试或联系管理员'];
+var errorMessage = require('./message').errorMessage;
+
 function checkUserEmail(email) {
 	var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email);
@@ -27,22 +24,22 @@ function checkDuplicateUserEmail(email, next) {
 			if(rows.length ==0) {
 				next(null);
 			} else {
-				next(errorMessage[3]);
+				next(errorMessage.registeredEmail);
 			}
 		} else {
 			console.log(err);
-			next(errorMessage[4]);
+			next(errorMessage.systemError);
 		}
 	});
 };
 
 function register(email, password, username, next) {
 	if (!checkUserEmail(email)) {
-		next(errorMessage[0]);
+		next(errorMessage.invalidEmailFormat);
 	} else if (!checkUserName(username)) {
-		next(errorMessage[1]);
+		next(errorMessage.invalidUserName);
 	} else if (!checkUserPassword(password)) {
-		next(errorMessage[2]);
+		next(errorMessage.invalidPassword);
 	} else {
 		checkDuplicateUserEmail(email, function(message) {
 			if (message) { // some type of error has appended
@@ -55,7 +52,7 @@ function register(email, password, username, next) {
 						next(null);
 					} else {
 						console.log(err);
-						next(errorMessage[4]);
+						next(errorMessage,systemError);
 					}
 	        	});
 			}
@@ -64,5 +61,6 @@ function register(email, password, username, next) {
 };
 
 module.exports = {
-	'register': register
+	'register': register,
+	'checkUserPassword': checkUserPassword
 };
