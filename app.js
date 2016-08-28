@@ -52,6 +52,7 @@ app.use('/contact', router);
 app.use('/about', router);
 app.use('/login', router);
 app.use('/register', router);
+app.use('/app', router);
 
 // JSON API
 app.get('/api/name', api.name);
