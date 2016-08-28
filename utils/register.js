@@ -33,6 +33,21 @@ function checkDuplicateUserEmail(email, next) {
 	});
 };
 
+function checkDuplicateUserName(username, next) {
+	connection.query('SELECT * FROM user WHERE username = ?', [username], function(err, rows, field) {
+		if (!err) {
+			if(rows.length ==0) {
+				next(null);
+			} else {
+				next(errorMessage.registeredUserName);
+			}
+		} else {
+			console.log(err);
+			next(errorMessage.systemError);
+		}
+	});
+};
+
 function register(email, password, username, next) {
 	if (!checkUserEmail(email)) {
 		next(errorMessage.invalidEmailFormat);
@@ -46,15 +61,22 @@ function register(email, password, username, next) {
 				next(message);
 				console.log(message);
 			} else {
-				connection.query('INSERT INTO user (email, password, username) VALUES (?, ?, ?)', [email, password, username], function(err, rows, field) {
-					if (!err){
-						console.log('user ' + email + ' saved!');
-						next(null);
+				checkDuplicateUserName(username, function(message) {
+					if (message) {
+						next(message);
+						console.log(message);
 					} else {
-						console.log(err);
-						next(errorMessage,systemError);
+						connection.query('INSERT INTO user (email, password, username) VALUES (?, ?, ?)', [email, password, username], function(err, rows, field) {
+							if (!err){
+								console.log('user ' + email + ' saved!');
+								next(null);
+							} else {
+								console.log(err);
+								next(errorMessage.systemError);
+							}
+			        	});
 					}
-	        	});
+				});	
 			}
 		});
 	}

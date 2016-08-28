@@ -14,7 +14,7 @@ var connection = mysql.createConnection({
 var connectionMessage = `
 successfully connected to mysql
 now start executing migration queries
-*************************************
+***************************************************
 `;
 
 connection.connect(function(err) {

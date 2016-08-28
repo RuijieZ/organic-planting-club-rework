@@ -6,7 +6,8 @@ CREATE TABLE user (
 	password VARCHAR(80),
 	username VARCHAR(80),
 	PRIMARY KEY (id),
-	UNIQUE (email)
+	UNIQUE (email),
+	UNIQUE (username)
 );
 
 CREATE TABLE task (
