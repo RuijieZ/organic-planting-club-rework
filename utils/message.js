@@ -9,7 +9,7 @@ var errorMessage = {
 	'userDoesNotExist': '此用户不存在',
 	'incorrectPassword': '密码不正确，请重新输入',
 	'confirmPasswordMissmatch': '确认密码必须和密码新密码相同，请重试',
-	'resignIn': '距您上次登录已有一段时间，请重新登录',
+	'resignIn': '请登录',
 	'registeredUserName': '此用户名已被注册， 请尝试另一个用户名'
 };
 

@@ -33,15 +33,15 @@ router.route('/resetPassword')
 router.route('/login')
 	.get(auth.validate, function(req, res) {
 		if (req.validation) {
-			res.redirect('app');
+			res.redirect('/app/' + req.username);
 		} else {
 			res.render('login', {message: errorMsg.resignIn});
 		}
 	})
 	.post(function(req, res) {
-		userEmail = req.body.userEmail;
+		username = req.body.username;
 		password = req.body.password;
-		auth.authenticate(userEmail, password, function(errorMessage, token) {
+		auth.authenticate(username, password, function(errorMessage, token) {
 			if (errorMessage) {
 				res.render('login', {message: errorMessage});
 			} else {
@@ -49,7 +49,7 @@ router.route('/login')
 					"token": token,
 					"status": 202
 				});
-				res.redirect('app');
+				res.redirect('/app/' + username);
 			}
 		});
 	});
@@ -66,12 +66,12 @@ router.route('/register')
 			if (errorMessage) {
 				res.render('register', {message: errorMessage});
 			} else {
-				res.render('login', {message: successMessage.registerSuccess});
+				res.redirect('/login');
 			}
 		});
 	});
 
-router.get('/app', function(req, res) {
+router.get('/app/:username', function(req, res) {
 	res.render('app');
 })
 

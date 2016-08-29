@@ -11,8 +11,8 @@ angular.module('OPC', [ // OPC , short for organic planting club
 ]).
 config(function ($routeProvider, $locationProvider) {
   $routeProvider.
-    when('/home', {
-      templateUrl: 'home',
+    when('/app/:username', {
+      templateUrl: 'app',
       controller: 'MyCtrl1'
     }).
     when('/contact', {
